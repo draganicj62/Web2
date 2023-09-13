@@ -1,0 +1,122 @@
+<h3 class="mb-5 needs-validation">Sign up</h3>
+<form [formGroup]="registerationForm" class="needs-validation">
+  <div class="d-flex">
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typeUsername-2" >Username</label>
+      <input type="text" id="typeUsername-2" class="form-control form-control-lg" formControlName="username" />
+      <br/>
+      <span *ngIf="!username.valid && (username.touched)" class="alert  alert-danger">
+                Please provide username
+      </span>
+    </div>
+
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typeEmailX-2" >Email</label>
+      <input type="email" id="typeEmailX-2" class="form-control form-control-lg" formControlName="email" />
+      <br/>
+      <span *ngIf="!email.valid && (email.touched)" class="alert alert-danger">
+        <span *ngIf="email.hasError('required')">
+            Please provide email id
+        </span>
+        <span *ngIf="email.hasError('email')">
+          Please provide valid email id
+        </span>
+        <div class="invalid-feedback"> Please provide email id</div>
+      </span>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typeName-2">First name</label>
+      <input type="text" id="typeName-2" class="form-control form-control-lg" formControlName="firstname" />
+      <br/>
+      <span *ngIf="!firstname.valid && (firstname.touched)" class="alert alert-danger" >
+                Please provide name
+      </span>
+    </div>
+
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typeLastName-2">Last name</label>
+      <input type="text" id="typeLastName-2" class="form-control form-control-lg" formControlName="lastname" />
+      <br/>
+      <span *ngIf="!lastname.valid && (lastname.touched)" class="alert alert-danger">
+                Please provide lastname
+      </span>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typeBirthday" >Birthday</label>
+      <input type="date" id="typeBirthday" min="1900-01-01" max="2023-01-01" value="2022-01-01" class="form-control form-control-lg" formControlName="birthday" >
+    </div>
+
+    <!-- <div class="form-outline mb-2" >
+      <label class="form-label" for="typeLocation-2" >Address</label>
+      <input class="form-control form-control-lg" id="typeLocation-2" ngx-google-places-autocomplete  [options]='options'  (onAddressChange)="handleAddressChange($event)" formControlName="address"/>
+      <span *ngIf="!address.valid && (address.touched)"
+              class="alert"  style="color: red;">
+                Please provide address
+      </span>
+    </div> -->
+
+
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typeAddress-2">Address</label>
+      <input type="text" id="typeAddress-2" class="form-control form-control-lg" formControlName="address" />
+      <br/>
+      <span *ngIf="!address.valid && (address.touched)" class="alert alert-danger">
+              Please provide address
+            </span>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typePasswordX-2" >Password</label>
+        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" formControlName="password" />
+        <br/>
+        <span *ngIf="!password.valid && (password.touched)" class="alert alert-danger">
+          <span *ngIf="password.hasError('required')">
+            Please provide password
+          </span>
+          <span *ngIf="password.hasError('minlength')">
+            Password should not be lesser than 8 character
+          </span>
+        </span>
+    </div>
+    <div class="form-outline mb-2">
+      <label class="form-label" for="typePassword-3">Confirme password</label>
+      <input type="password" id="typePassword-3" class="form-control form-control-lg" formControlName="confirmPassword" />
+    </div>
+    <br/>
+    <span  *ngIf="!confirmPassword.valid && (confirmPassword.touched)" class="alert alert-danger">
+        <span *ngIf="confirmPassword.hasError('required')">
+          Please confirm password
+        </span>
+        <span *ngIf="registerationForm.hasError('notmatched') && confirmPassword.valid">
+          Password not matched
+        </span>
+    </span>
+  </div>
+
+  <!-- <div class="form-outline mb-2">
+    <label class="form-label" for="typePicture-3">Chose profile picture</label>
+    <input type="file" #imageInput class="file-upload" accept="image/*" (change)="onFileChanged(imageInput)" onchange="console.log(event.target.files)">
+  </div> -->
+
+  <div class="form-outline mb-2">
+    <label class="form-label" for="typePicture-3">Choose profile picture</label>
+    <div class="input-group">
+      <input type="file" #imageInput class="form-control file-upload" id="typePicture-3" accept="image/*" (change)="onFileChanged(imageInput)" aria-describedby="inputGroupFileAddon">
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    <button class="btn btn-primary btn-lg btn-block" type="button" (click)="onSubmitUser()">Register</button>
+    <button class="btn btn-primary btn-lg btn-block" type="button" (click)="onSubmitDeliverer()">Become Seller</button>
+  </div>
+</form>

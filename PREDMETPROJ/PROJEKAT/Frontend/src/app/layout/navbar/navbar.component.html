@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light" style="background-color:#288ccf;">
+  <div class="container-fluid" style="background-color:#288ccf;">
+    <a class="navbar-brand alias naslov_hover" style="margin-left: 2%;" (click)="CheckDashboard()"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-right: 2%;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header" style="background-color:#288ccf;">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BipBip</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active alias naslov_hover" aria-current="page" (click)="CheckProfile()">
+              <i class="fa-regular fa-user" ></i>  Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active alias naslov_hover" aria-current="page" (click)="SignOut()">
+              <i class="fa-solid fa-right-from-bracket"  ></i>  Sign out
+            </a>
+          </li>
+        </ul>
+      </div> 
+    </div>
+  </div>
+</nav>

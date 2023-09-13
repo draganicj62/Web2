@@ -1,0 +1,40 @@
+<div *appHasRole="seller">
+  <button class="btn btn-primary" (click)="UnclamedOrders()">Go to unclamed orders</button>
+</div>
+<table class="table table-hover" style="background-color: white;">
+  <thead>
+    <tr>
+      <th scope="col">Order Id</th>
+      <th scope="col">Comment</th>
+      <th scope="col">Address</th>
+      <th scope="col">Price</th>
+      <th scope="col">Status</th>
+      <th scope="col">Article Name</th>
+      <th scope="col">Article Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Time left</th>
+      <th scope="col" *appHasRole="customer">Cancel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders;">
+      <td>{{order.id}}</td>
+      <td>{{order.comment}}</td>
+      <td>{{order.address}}</td>
+      <td>{{order.price}}</td>
+      <td>{{order.status}}</td>
+      <th>{{order.item.articleName}}</th>
+      <td>{{ order.item.quantity !== 0 ? (order.price - 7) / order.item.quantity : 'N/A' }}</td>
+      <td>{{order.item.quantity}}</td>
+      <td *appHasRole="customerAndSeller">
+        <countdown [config]="order.config" *ngIf="order.showCountdown"></countdown>
+      </td>
+      <td *appHasRole="customer"><ng-container>
+        <button class="btn btn-danger" (click)="Cancel(order.id)">Cancel</button>
+        </ng-container>
+        <ng-container >
+        </ng-container>
+      </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,35 @@
+<table class="table table-hover" style="background-color: white;display: block; height: 400px; overflow: auto;">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Username</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let seller of sellers; let i = index">
+      <td>{{1+i}}</td>
+      <td>{{seller.firstName}}</td>
+      <td>{{seller.lastName}}</td>
+      <td>{{seller.username}}</td>
+      <td>{{seller.birthday | date:'MM/dd/yyyy'}}</td>
+      <td>{{seller.address}}</td>
+      <th>{{seller.email}}</th>
+      <th>{{seller.verificationStatus}}</th>
+      <td>
+        <ng-container *ngIf="seller.verificationStatus == pending">
+           <button class="btn btn-success" (click)="Accept(seller.id)">Accept</button>
+           <button class="btn btn-danger" (click)="Deny(seller.id)"> Deny it </button>
+        </ng-container>
+        <ng-container *ngIf="seller.verificationStatus != pending">
+       </ng-container>
+      </td>
+  </tr>
+  </tbody>
+</table>

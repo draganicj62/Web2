@@ -1,0 +1,42 @@
+<h3 class="mb-5">Login</h3>
+<form [formGroup]="loginForm">
+  <div class="form-outline mb-4">
+    <label for="email" class="form-label">Email</label>
+          <input type="text" class="form-control" formControlName="email">
+          <div *ngIf="!email.valid && (email.touched)" >
+            <br/>
+            <span class="alert alert-danger">
+              <span *ngIf="email.hasError('required')">
+                  Please provide email id
+              </span>
+              <span *ngIf="email.hasError('email')">
+                Please provide valid email id
+              </span>
+            </span>
+            <br/>
+            <br/>
+          </div>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="typePasswordX-2" >Password</label>
+    <input type="password" id="typePasswordX-2" class="form-control form-control-lg" formControlName="password"/>
+    <div *ngIf="!password.valid && (password.touched)">
+      <br/>
+      <span class="alert alert-danger">
+        <span *ngIf="password.hasError('required')">
+          Please provide password
+        </span>
+        <span *ngIf="password.hasError('minlength')">
+          Password should not be lesser than 8 character
+        </span>
+      </span>
+      <br/>
+      <br/>
+    </div>
+  </div>
+
+  <button class="btn btn-primary btn-lg btn-block" type="button" (click)="onLogin()">Login</button>
+  <hr class="my-4">
+</form>
+<button class="btn btn-danger" #loginRef>Login with Google</button> 

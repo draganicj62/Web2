@@ -1,0 +1,82 @@
+<div class="card mb-4 shadow-lg">
+  <div class="card-body text-center">
+    <h3>Add Article</h3>
+    <form [formGroup]="addArticleForm">
+      <div class="form-outline mb-4">
+        <label for="email" class="form-label">Name</label>
+              <input type="text" class="form-control" formControlName="name">
+              <div *ngIf="!name.valid && (name.touched)" >
+                <br/>
+                <span class="alert alert-danger">
+                  <span *ngIf="name.hasError('required')">
+                      Please provide name
+                  </span>
+                  <span *ngIf="name.hasError('minlength')">
+                    Please provide valid name
+                  </span>
+                </span>
+                <br/>
+                <br/>
+              </div>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="typePasswordX-2" >Price</label>
+        <input type="number" min="1" max="1000000" id="typePasswordX-2" class="form-control form-control-lg" formControlName="price" style="text-align:center ;"/>
+        <div *ngIf="!price.valid && (price.touched)">
+          <br/>
+          <span  class="alert alert-danger">
+            <span *ngIf="price.hasError('required')">
+              Please provide price
+            </span>
+          </span>
+          <br/>
+          <br/>
+        </div>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="typePasswordX-2" >Quantity</label>
+        <input type="number" min="1" max="1000000" id="typePasswordX-2" class="form-control form-control-lg" formControlName="quantity" style="text-align:center ;"/>
+        <div *ngIf="!quantity.valid && (quantity.touched)">
+          <br/>
+          <span class="alert alert-danger">
+            <span *ngIf="quantity.hasError('required')">
+              Please provide quantity
+            </span>
+          </span>
+          <br/>
+          <br/>
+        </div>
+      </div>
+      
+      <div class="form-outline mb-4">
+        <label for="description" class="form-label">Description</label>
+              <input type="text" class="form-control" formControlName="description">
+              <div *ngIf="!description.valid && (description.touched)">
+                <br/>
+                <span  class="alert alert-danger">
+                  <span *ngIf="description.hasError('required')">
+                      Please provide description
+                  </span>
+                  <span *ngIf="description.hasError('minlength')">
+                    Please provide valid description
+                  </span>
+                </span>
+                <br/><br/>
+              </div>
+      </div>
+
+      <div class="form-outline mb-2">
+        <label class="form-label" for="typePicture-3">Choose article picture</label>
+        <div class="input-group">
+          <input type="file" #imageInput class="form-control file-upload" id="typePicture-3" accept="image/*" (change)="onFileChanged(imageInput)" aria-describedby="inputGroupFileAddon">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center mb-2">
+        <button type="button" class="btn btn-primary" (click)="addArticle()">Add Article</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+  <div class="grid">
+    <div class="row" style="margin-top: 0.8cm;">
+
+      <div class="col-3">
+        <div class="component-container">
+          <h2 class="component-header">User Profile</h2>
+          <div class="component-content-all">
+            <app-show-user-profile></app-show-user-profile>
+          </div>
+        </div>
+      </div>
+      <div class="col-8" *appHasRole="admin">
+        <div class="component-container">
+          <h2 class="component-header">Seller List</h2>
+          <div class="component-content-all">
+            <app-seller-list></app-seller-list>
+          </div>
+        </div>
+        <div class="component-container">
+          <h2 class="component-header">All Orders</h2>
+          <div class="component-content-all">
+            <app-all-orders></app-all-orders>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-6" *appHasRole="seller">
+        <div class="component-container">
+          <h2 class="component-header">Seller articles</h2>
+          <div class="component-content">
+            <app-seller-articles></app-seller-articles>
+          </div>
+        </div>
+        <div class="component-container">
+          <h2 class="component-header">Order History</h2>
+          <div class="component-content-all">
+            <app-order-history></app-order-history>
+          </div>
+        </div>
+        <div class="component-container">
+          <h2 class="component-header">Active orders</h2>
+          <div class="component-content-all">
+            <app-active-orders></app-active-orders>
+          </div>
+        </div>
+      </div>
+      <div class="col-3" *appHasRole="seller">
+        <div class="component-container">
+          <h2 class="component-header">Add article</h2>
+          <div class="component-content-all">
+            <app-add-article></app-add-article>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8" *appHasRole="customer">
+        <div class="component-container">
+          <h2 class="component-header">All articles</h2>
+          <div class="component-content-all">
+            <app-all-articles></app-all-articles>
+          </div>
+        </div>
+        <div class="component-container">
+          <h2 class="component-header">Order history</h2>
+          <div class="component-content-all">
+            <app-order-history></app-order-history>
+          </div>
+        </div>
+        <div class="component-container">
+          <h2 class="component-header">Active orders</h2>
+          <div class="component-content-all">
+            <app-active-orders></app-active-orders>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

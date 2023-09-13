@@ -1,0 +1,12 @@
+<div class="card" style="margin-top: 2.5cm; height: 700px; background-color: transparent;">
+    <div class="container rounded bg-white mt-5 mb-5">
+        <h5>Product price: {{article.price}}$</h5>
+        <h5>Delivery price: 7$</h5>
+        <hr/>
+        <h5>Amount to pay: {{amount}}$</h5>
+        <div class="divcl"><button style="width: 750px; height: 50px; background-color: rgb(0, 109, 128); border-color: transparent; color: white; font-weight: 700; font-size:larger;" (click)="Order()">Pay in person</button></div>
+        <br/>
+        <div class="divcl" #paymentRef></div>
+    </div>
+</div>
+

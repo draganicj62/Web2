@@ -1,0 +1,41 @@
+<div class="height d-flex justify-content-center align-items-center" style="height: 450px;">
+  <div  *ngIf="article" class="card p-3">
+      <div class="d-flex justify-content-between align-items-center ">
+          <div class="mt-2">
+            <div class='card_image'>
+              <img [src]="article.picture" [alt]="'InvalidUrl'" />
+            </div>
+              <div class="mt-5">
+                  <h3 class="main-heading mt-0">{{article.name}}</h3>
+                  <h4 class="text-uppercase">{{article.price}}$</h4>
+                </div>
+          </div>
+      </div>
+      <p>{{article.description}}</p>
+      <form [formGroup]="orderArticle">
+        <div class="col-md-6">
+          <label class="labels">Quantity</label>
+          <input class="form-control"  formControlName="quantity" id="numberId" type="number" min="1" max="10000"  style="text-align:center ;">
+        </div>
+        <input type="text" class="form-control" formControlName="address" placeholder="address" >
+        <div *ngIf="!address.valid && (address.touched)">
+          <br/>
+          <span class="alert alert-danger">
+              Please provide address
+          </span>
+          <br/>
+          <br/>
+        </div>
+        <input type="text" class="form-control" formControlName="comment" placeholder="comment" >
+        <div *ngIf="!comment.valid && (comment.touched)">
+          <br/>
+          <span class="alert alert-danger">
+              Please provide comment
+          </span>
+          <br/>
+          <br/>                
+        </div>
+      </form>
+      <button class="btn btn-primary" (click)="Order(article)" >Order</button>
+  </div>
+</div>

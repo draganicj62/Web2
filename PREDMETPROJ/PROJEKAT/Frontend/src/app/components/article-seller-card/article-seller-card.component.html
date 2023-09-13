@@ -1,0 +1,22 @@
+<div class="height d-flex justify-content-center align-items-center" style="height: 450px;">
+  <div class="card p-3">
+      <div class="d-flex justify-content-between align-items-center ">
+          <div class="mt-2">
+            <div class='card_image'>
+              <img [src]="article.picture" [alt]="'InvalidUrl'" />
+            </div>
+              <div class="mt-5">
+                  <h3 class="main-heading mt-0">{{article.name}}</h3>
+                  <h4 class="text-uppercase">{{article.price}}$</h4>
+                </div>
+          </div>
+      </div>
+      <p>{{article.description}}</p>
+      <h4 class="text-uppercase">{{article.quantity}}</h4>
+
+      <button class="btn btn-primary" (click)="Edit(article.id)">Edit</button>
+      <button class="btn btn-danger" (click)="Delete(article.id)">Delete</button>
+      
+      <!-- (click)="AddToCart(article)" -->
+  </div>
+</div>

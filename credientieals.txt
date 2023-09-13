@@ -1,0 +1,18 @@
+Client ID: AS2RSszuxVXWWqMmRgSiCQ1deeV9GrnCQYMe9v1W7RfynvTAlkKMjOi486om1qlHgR2lc24tG055-F4y
+Secret Key: EFGLCxT06a5lQIYiAi-xIPnZDjMmzb4q4WbA1IacBAHWjqDEbh4Y5Zb-e4b1mxX20qWclAv_RcSKCoGZ
+
+
+{
+"scope": "https://uri.paypal.com/services/checkout/one-click-with-merchant-issued-token https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/vault/payment-tokens/read https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller Braintree:Vault https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/billing-agreements https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://uri.paypal.com/services/vault/payment-tokens/readwrite https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/shipping/trackers/readwrite https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks",
+    "access_token": "A21AAI4BgwAtZQWTTOJkkLK8aMJlehdPChE0sqxV_jm9vvCwVZ-OWS9k4DAJm2uNnaktTraZfHjfo4xLaE5_Pni8fhKYkcI8w",
+    "token_type": "Bearer",
+    "app_id": "APP-80W284485P519543T",
+    "expires_in": 32399,
+    "nonce": "2023-09-11T23:31:36ZZOdyvqY5tkBVAOnSr_frhOBj7WtXTm4pVN61exQqdok"
+}
+
+KEY WITH MAPTILER:
+Hmji94E0Izv9YAukXyVb		=>  Default key Created 2023-09-12
+
+KEY WITH GEOAPIFY:
+78f9813e220a4b578e84014392a073f3

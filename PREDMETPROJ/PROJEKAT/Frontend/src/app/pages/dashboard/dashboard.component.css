@@ -1,0 +1,29 @@
+.component-container {
+    border: 1px solid white;
+    border-radius: 20px;
+    border-width: 5px;
+    padding: 10px;
+    margin-bottom: 7px;
+    background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .component-header {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .component-content {
+    margin-top: 50px;
+  }
+
+  .component-content-all {
+    margin-top: 5px;
+  }
+  
+  .component-content app-show-user-profile,
+  .component-content app-seller-list,
+  .component-content app-all-orders {
+    margin-bottom: 10px;
+  }
